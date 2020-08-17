@@ -141,7 +141,12 @@ export default {
   components: {
     routerDom
   },
-  created() {},
+  created() {
+    window.addEventListener('hashchange',()=>{
+      this.hash = window.location.hash.splice(2) || 'default'
+      
+    },false)
+  },
   mounted() {},
   methods: {
     handParent() {
